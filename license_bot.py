@@ -24,10 +24,10 @@ from telegram.ext import (
 #  НАСТРОЙКИ — ЗАПОЛНИ ПЕРЕД ЗАПУСКОМ
 # ══════════════════════════════════════════════════════════════
 
-BOT_TOKEN   = "8893688202:AAH8z_F95xED8RRqE9qqUKXfHWYcq7Nq76s"   # получить у @BotFather
-ALLOWED_IDS = [5419292269]                   # список Telegram ID кто может пользоваться
-                                   # оставь пустым [] чтобы разрешить всем
-                                   # пример: [123456789, 987654321]
+import os
+BOT_TOKEN   = os.environ.get("BOT_TOKEN", "")
+ALLOWED_IDS_STR = os.environ.get("ALLOWED_IDS", "")
+ALLOWED_IDS = [int(x) for x in ALLOWED_IDS_STR.split(",") if x.strip()]
 
 # ══════════════════════════════════════════════════════════════
 #  ЛОГИКА (не изменена из оригинала)
