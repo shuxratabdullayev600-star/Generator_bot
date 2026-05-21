@@ -24,7 +24,7 @@ from telegram.ext import (
 #  НАСТРОЙКИ — ЗАПОЛНИ ПЕРЕД ЗАПУСКОМ
 # ══════════════════════════════════════════════════════════════
 
-import os
+
 BOT_TOKEN   = os.environ.get("BOT_TOKEN", "")
 ALLOWED_IDS_STR = os.environ.get("ALLOWED_IDS", "")
 ALLOWED_IDS = [int(x) for x in ALLOWED_IDS_STR.split(",") if x.strip()]
