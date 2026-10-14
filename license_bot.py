@@ -25,7 +25,7 @@ from telegram.ext import (
 # ══════════════════════════════════════════════════════════════
 
 
-BOT_TOKEN   = os.environ.get("BOT_TOKEN", "")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 ALLOWED_IDS_STR = os.environ.get("ALLOWED_IDS", "")
 ALLOWED_IDS = [int(x) for x in ALLOWED_IDS_STR.split(",") if x.strip()]
 
@@ -258,7 +258,7 @@ async def unknown(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 # ══════════════════════════════════════════════════════════════
 
 def main():
-    if BOT_TOKEN == "ВАШ_ТОКЕН_СЮДА":
+        if not BOT_TOKEN:
         print("=" * 50)
         print("XATO: BOT_TOKEN ni to'ldiring!")
         print("@BotFather dan token oling va")
